@@ -1,0 +1,11 @@
+<h4>Internal server error</h4>
+<ng-container *ngIf="error">
+    <h5 class="text-danger">Error: {{error.message}}</h5>
+    <p class="font-weight-bold">If you are seeing this, then it mostly likely not angular problem</p>
+ <p style="font-weight: bold;">
+    Stack Trace below.
+ </p>
+<code class="mt-5" style="background-color: whitesmoke;">
+    {{error.details}}
+</code>
+</ng-container>
