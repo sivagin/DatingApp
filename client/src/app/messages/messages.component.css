@@ -1,0 +1,6 @@
+.img-circle{
+    max-height: 50px;
+}
+button[name="messageCategory"].active{
+    background: darkblue;
+  }
