@@ -9,7 +9,7 @@ import { AccountService } from './_services/account.service';
 })
 export class AppComponent implements OnInit{
   
-  title = 'Dating App';
+  title = 'Match Makers';
   users: any;
 
   constructor(private accountService:AccountService){

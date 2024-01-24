@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HubConnection, HubConnectionBuilder } from '@microsoft/signalr';
+import { HttpTransportType, HubConnection, HubConnectionBuilder, LogLevel } from '@microsoft/signalr';
 import { ToastrService } from 'ngx-toastr';
 import { environment } from 'src/environments/environment';
 import { User } from '../_models/user';
@@ -20,7 +20,9 @@ export class PresenceService {
   createHubConnection(user:User){
     this.hubConnection=new HubConnectionBuilder()
         .withUrl(this.hubUrl+'presence',{
-          accessTokenFactory:()=>user.token
+          accessTokenFactory:()=>user.token,
+          skipNegotiation:true,
+          transport:HttpTransportType.WebSockets
         })
         .withAutomaticReconnect()
         .build();
